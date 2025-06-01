@@ -1,8 +1,7 @@
-/* ============================= */
-/*      Variables & Reset        */
-/* ============================= */
+/* =============================
+   Variables & Reset
+   ============================= */
 
-/* Couleurs principales (dark theme) */
 :root {
   --bg-color: #121212;
   --text-color: #ececec;
@@ -12,7 +11,6 @@
   --error-text: #ffffff;        /* Texte blanc sur fond erreur */
 }
 
-/* Reset basique */
 *,
 *::before,
 *::after {
@@ -28,9 +26,9 @@ body {
   line-height: 1.5;
 }
 
-/* ============================= */
-/*         Header / Logo         */
-/* ============================= */
+/* =============================
+   Header / Logo
+   ============================= */
 
 .site-header {
   position: fixed;
@@ -66,14 +64,13 @@ body {
   margin-left: 4px;
 }
 
-/* ============================= */
-/*        Sections / Layout      */
-/* ============================= */
+/* =============================
+   Sections / Layout
+   ============================= */
 
 .section {
-  /* Prendre toute la hauteur visible, avec décalage pour le header fixe */
   min-height: calc(100vh - 60px);
-  padding-top: 60px; /* espace pour le header */
+  padding-top: 60px; /* pour laisser la place au header fixe */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,13 +78,26 @@ body {
 
 .section-content {
   text-align: center;
-  max-width: 480px;
+  max-width: 600px;
   width: 90%;
 }
 
-/* ============================= */
-/*      Titres & Paragraphes     */
-/* ============================= */
+/* Section d’accueil plus longue pour scroll */
+.section-home {
+  padding-bottom: 80px;
+}
+
+/* =============================
+   Titres & Paragraphes
+   ============================= */
+
+.home-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: var(--highlight-color);
+}
 
 .section-title {
   font-family: 'Montserrat', sans-serif;
@@ -103,31 +113,9 @@ body {
   color: var(--text-color);
 }
 
-/* ============================= */
-/*          Formulaire           */
-/* ============================= */
-
-.input-url {
-  width: 100%;
-  padding: 12px;
-  font-size: 1rem;
-  border: 2px solid var(--accent-color);
-  border-radius: 4px;
-  background-color: #1e1e1e;
-  color: var(--text-color);
-  outline: none;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
-  margin-bottom: 12px;
-}
-
-.input-url:focus {
-  border-color: var(--highlight-color);
-  background-color: #282828;
-}
-
-/* ============================= */
-/*        Boutons (Btn)          */
-/* ============================= */
+/* =============================
+   Boutons (Btn)
+   ============================= */
 
 .btn-primary {
   display: inline-block;
@@ -141,17 +129,18 @@ body {
   border-radius: 4px;
   cursor: pointer;
   transition: transform 0.15s ease, background-color 0.2s ease;
+  text-decoration: none; /* pour les <a> */
 }
 
 .btn-primary:hover {
-  background-color: #16a085; /* accent plus foncé au hover */
+  background-color: #16a085;
 }
 
 .btn-primary:active {
   transform: scale(0.97);
 }
 
-/* Pour ajouter une petite animation au clic (ripple-like) */
+/* Effet “ripple” */
 .btn-animate {
   position: relative;
   overflow: hidden;
@@ -174,9 +163,31 @@ body {
   transform: translate(-50%, -50%) scale(1);
 }
 
-/* ============================= */
-/*      Résultats & Erreurs      */
-/* ============================= */
+/* =============================
+   Formulaire & Inputs
+   ============================= */
+
+.input-url {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid var(--accent-color);
+  border-radius: 4px;
+  background-color: #1e1e1e;
+  color: var(--text-color);
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  margin-bottom: 12px;
+}
+
+.input-url:focus {
+  border-color: var(--highlight-color);
+  background-color: #282828;
+}
+
+/* =============================
+   Résultats & Erreurs
+   ============================= */
 
 .result-box {
   margin-top: 20px;
@@ -210,17 +221,130 @@ body {
   text-align: left;
 }
 
-/* ============================= */
-/*   Cacher / Afficher Elément   */
-/* ============================= */
+/* =============================
+   Réseaux sociaux (icônes)
+   ============================= */
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  background: none;
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--text-color);
+}
+
+.social-icon:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-icon:active {
+  transform: scale(0.95);
+}
+
+/* Quand l’icône est sélectionnée */
+.social-icon.selected {
+  background-color: var(--accent-color);
+  border-color: var(--highlight-color);
+}
+
+.social-icon.selected svg {
+  fill: var(--highlight-color);
+}
+
+/* =============================
+   Section “Pourquoi” (features)
+   ============================= */
+
+.features-list {
+  list-style: none;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.feature-icon {
+  width: 28px;
+  height: 28px;
+  fill: var(--accent-color);
+  margin-right: 12px;
+}
+
+/* =============================
+   Section “Comment ça marche” (étapes)
+   ============================= */
+
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+}
+
+.step-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--accent-color);
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-desc {
+  flex: 1;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+/* =============================
+   Cacher / Afficher éléments
+   ============================= */
 
 .hidden {
   display: none;
 }
 
-/* ============================= */
-/*     Animation au Scroll       */
-/* ============================= */
+/* =============================
+   Animation au scroll
+   ============================= */
 
 .fade-in {
   opacity: 0;
@@ -233,11 +357,14 @@ body {
   transform: translateY(0);
 }
 
-/* ============================= */
-/*        Responsive / Mobile    */
-/* ============================= */
+/* =============================
+   Responsive / Mobile
+   ============================= */
 
 @media (max-width: 480px) {
+  .home-title {
+    font-size: 2.4rem;
+  }
   .section-title {
     font-size: 1.6rem;
   }
@@ -247,5 +374,21 @@ body {
   .btn-primary {
     width: 100%;
     padding: 12px 0;
+  }
+  .social-icons {
+    gap: 12px;
+  }
+  .social-icon {
+    padding: 10px;
+  }
+  .feature-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+  .step-number {
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
   }
 }

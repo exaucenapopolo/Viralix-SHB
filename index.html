@@ -2,30 +2,30 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Viralix SBH</title>
+  <title>ViralixSBH</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Google Fonts : Montserrat (titres) et Open Sans (texte) -->
+  <!-- Google Fonts : Montserrat pour les titres, Open Sans pour le texte -->
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Open+Sans:wght@400;600&display=swap"
     rel="stylesheet"
   >
 
-  <!-- CSS principal -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Logo + barre fixe -->
+  <!-- ===== HEADER FIXE ===== -->
   <header class="site-header">
     <div class="logo">
-      <!-- Icône Download SVG inline -->
+      <!-- Icône “téléchargement” (flèche vers le bas) -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="icon-download"
         viewBox="0 0 24 24"
         fill="currentColor"
       >
-        <path d="M5 20h14v-2H5v2zm7-18L5.33 9h3.84v4h4.66v-4h3.84L12 2z"/>
+        <!-- Flèche pointant vers le bas -->
+        <path d="M5 20h14v-2H5v2zm7-14l5 5h-4v4h-2v-4H7l5-5z"/>
       </svg>
       <h1 class="logo-text">
         Viralix<span class="logo-sbh">SBH</span>
@@ -33,45 +33,96 @@
     </div>
   </header>
 
-  <!-- Section d'accueil -->
-  <section id="home-section" class="section">
-    <div class="section-content fade-in">
-      <h2 class="section-title">Bienvenue sur Viralix SBH</h2>
-      <p class="section-desc">
+  <!-- ===== SECTION ACCUEIL (SCROLLABLE) ===== -->
+  <section id="home-section" class="section section-home">
+    <div class="section-content">
+      <h2 class="home-title fade-in">Bienvenue sur ViralixSBH</h2>
+      <p class="section-desc fade-in">
         Viralix Social Boost Horizon – votre solution gratuite pour télécharger facilement
         les vidéos YouTube, TikTok, Instagram et Facebook, sans inscription.
       </p>
-      <button id="start-button" class="btn-primary btn-animate">Commencer</button>
+      <a href="download.html" class="btn-primary btn-animate fade-in">Commencer</a>
     </div>
   </section>
 
-  <!-- Section de téléchargement (cachée au départ) -->
-  <section id="downloader-section" class="section hidden">
-    <div class="section-content fade-in">
-      <h2 class="section-title">Téléchargez votre vidéo</h2>
-      <form id="download-form">
-        <input
-          type="url"
-          id="video-url"
-          class="input-url"
-          placeholder="Collez l'URL de la vidéo ici"
-          required
-        >
-        <button type="submit" class="btn-primary btn-animate">Générer le lien</button>
-      </form>
+  <!-- ===== SECTION “POURQUOI VIRALIXSBH ?” ===== -->
+  <section id="why-section" class="section section-why">
+    <div class="section-content">
+      <h2 class="section-title fade-in">Pourquoi choisir ViralixSBH ?</h2>
+      <ul class="features-list">
+        <li class="feature-item fade-in">
+          <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon" viewBox="0 0 24 24" fill="currentColor">
+            <!-- Icône d’horloge pour rapidité -->
+            <path d="M12 20c4.41 0 8-3.59 8-8s-3.59-8-8-8-8 3.59-8 8 3.59 8 8 8zm.5-13h-1v5l4.25 2.52.5-.86L12.5 12V7z"/>
+          </svg>
+          Téléchargement instantané
+        </li>
+        <li class="feature-item fade-in">
+          <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon" viewBox="0 0 24 24" fill="currentColor">
+            <!-- Icône de cadenas pour sécurité -->
+            <path d="M12 17a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5zm6-6h-1V8a5 5 0 0 0-10 0v3H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2zm-8-3a3 3 0 0 1 6 0v3H10V8zm8 12H6v-7h12v7z"/>
+          </svg>
+          100 % gratuit et sans compte
+        </li>
+        <li class="feature-item fade-in">
+          <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon" viewBox="0 0 24 24" fill="currentColor">
+            <!-- Icône de compatibilité multiplateforme -->
+            <path d="M19 4H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v-2H5V6h14v6h2V6c0-1.1-.9-2-2-2z"/>
+            <path d="M17 12h3l-4 4-4-4h3V4h2v8z"/>
+          </svg>
+          Compatible YouTube, TikTok, Instagram, Facebook
+        </li>
+      </ul>
+    </div>
+  </section>
 
-      <div id="result" class="result-box hidden">
-        <p>Lien vidéo récupéré :</p>
-        <a id="download-link" href="#" download class="download-link">
-          Télécharger la vidéo
-        </a>
+  <!-- ===== SECTION “COMMENT ÇA MARCHE ?” ===== -->
+  <section id="how-section" class="section section-how">
+    <div class="section-content">
+      <h2 class="section-title fade-in">Comment ça marche ?</h2>
+      <div class="steps-container">
+        <div class="step-item fade-in">
+          <div class="step-number">1</div>
+          <p class="step-desc">Cliquez sur “Commencer” pour accéder à l’interface de téléchargement.</p>
+        </div>
+        <div class="step-item fade-in">
+          <div class="step-number">2</div>
+          <p class="step-desc">Sélectionnez le réseau social de votre vidéo.</p>
+        </div>
+        <div class="step-item fade-in">
+          <div class="step-number">3</div>
+          <p class="step-desc">Collez l’URL de la vidéo puis cliquez sur “Générer le lien”.</p>
+        </div>
+        <div class="step-item fade-in">
+          <div class="step-number">4</div>
+          <p class="step-desc">Téléchargez votre vidéo via le lien généré. Simple et rapide !</p>
+        </div>
       </div>
-
-      <div id="error" class="error-box hidden"></div>
     </div>
   </section>
 
-  <!-- Script principal -->
-  <script src="download.js"></script>
+  <!-- Script pour gérer l’animation au scroll -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const faders = document.querySelectorAll(".fade-in");
+      const options = {
+        threshold: 0.3,
+        rootMargin: "0px 0px -40px 0px"
+      };
+
+      const appearOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, options);
+
+      faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+      });
+    });
+  </script>
 </body>
 </html>
