@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (downloaderSection.classList.contains("hidden")) {
         downloaderSection.classList.remove("hidden");
         // Lancer fade-in sur les nouveaux éléments
-        observeFadeIn(); 
+        observeFadeIn();
       }
     });
   });
@@ -43,8 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      // Remplacez par votre URL de Worker Cloudflare
-      const workerBase = "https://nom-de-votre-worker.<votre-compte>.workers.dev/fetch?url=";
+      // Voilà la seule modification : on utilise votre URL de Worker
+      const workerBase = "https://viralixsbh.mcexauofficiel.workers.dev/fetch?url=";
       const endpoint = workerBase + encodeURIComponent(videoUrl);
 
       const resp = await fetch(endpoint);
