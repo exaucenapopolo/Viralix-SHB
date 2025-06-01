@@ -5,7 +5,6 @@
   <title>ViralixSBH</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Google Fonts : Montserrat pour les titres, Open Sans pour le texte -->
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Open+Sans:wght@400;600&display=swap"
     rel="stylesheet"
@@ -14,18 +13,15 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- ===== HEADER FIXE ===== -->
   <header class="site-header">
     <div class="logo">
-      <!-- Icône “téléchargement” (flèche vers le bas) -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="icon-download"
         viewBox="0 0 24 24"
         fill="currentColor"
       >
-        <!-- Flèche pointant vers le bas -->
-        <path d="M5 20h14v-2H5v2zm7-14l5 5h-4v4h-2v-4H7l5-5z"/>
+        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
       </svg>
       <h1 class="logo-text">
         Viralix<span class="logo-sbh">SBH</span>
@@ -33,7 +29,6 @@
     </div>
   </header>
 
-  <!-- ===== SECTION ACCUEIL (SCROLLABLE) ===== -->
   <section id="home-section" class="section section-home">
     <div class="section-content">
       <h2 class="home-title fade-in">Bienvenue sur ViralixSBH</h2>
@@ -45,28 +40,24 @@
     </div>
   </section>
 
-  <!-- ===== SECTION “POURQUOI VIRALIXSBH ?” ===== -->
   <section id="why-section" class="section section-why">
     <div class="section-content">
       <h2 class="section-title fade-in">Pourquoi choisir ViralixSBH ?</h2>
       <ul class="features-list">
         <li class="feature-item fade-in">
           <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon" viewBox="0 0 24 24" fill="currentColor">
-            <!-- Icône d’horloge pour rapidité -->
             <path d="M12 20c4.41 0 8-3.59 8-8s-3.59-8-8-8-8 3.59-8 8 3.59 8 8 8zm.5-13h-1v5l4.25 2.52.5-.86L12.5 12V7z"/>
           </svg>
           Téléchargement instantané
         </li>
         <li class="feature-item fade-in">
           <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon" viewBox="0 0 24 24" fill="currentColor">
-            <!-- Icône de cadenas pour sécurité -->
             <path d="M12 17a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5zm6-6h-1V8a5 5 0 0 0-10 0v3H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2zm-8-3a3 3 0 0 1 6 0v3H10V8zm8 12H6v-7h12v7z"/>
           </svg>
           100 % gratuit et sans compte
         </li>
         <li class="feature-item fade-in">
           <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon" viewBox="0 0 24 24" fill="currentColor">
-            <!-- Icône de compatibilité multiplateforme -->
             <path d="M19 4H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v-2H5V6h14v6h2V6c0-1.1-.9-2-2-2z"/>
             <path d="M17 12h3l-4 4-4-4h3V4h2v8z"/>
           </svg>
@@ -76,7 +67,6 @@
     </div>
   </section>
 
-  <!-- ===== SECTION “COMMENT ÇA MARCHE ?” ===== -->
   <section id="how-section" class="section section-how">
     <div class="section-content">
       <h2 class="section-title fade-in">Comment ça marche ?</h2>
@@ -101,7 +91,6 @@
     </div>
   </section>
 
-  <!-- Script pour gérer l’animation au scroll -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const faders = document.querySelectorAll(".fade-in");
