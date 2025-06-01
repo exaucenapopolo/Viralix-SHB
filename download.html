@@ -2,29 +2,29 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>ViralixSBH – Télécharger une vidéo</title>
+  <title>ViralixSBH – Télécharger une vidéo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Google Fonts identiques -->
+  <!-- Google Fonts identiques à index.html -->
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Open+Sans:wght@400;600&display=swap"
     rel="stylesheet"
   >
-
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- ===== HEADER FIXE ===== -->
   <header class="site-header">
     <div class="logo">
-      <!-- Flèche vers le bas identique à index.html -->
+      <!-- Icône flèche vers le bas (téléchargement) -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="icon-download"
         viewBox="0 0 24 24"
         fill="currentColor"
       >
-        <path d="M5 20h14v-2H5v2zm7-14l5 5h-4v4h-2v-4H7l5-5z"/>
+        <!-- Même path que dans index.html pour cohérence -->
+        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
       </svg>
       <h1 class="logo-text">
         Viralix<span class="logo-sbh">SBH</span>
@@ -33,10 +33,10 @@
   </header>
 
   <!-- ===== SECTION SÉLECTION DU RÉSEAU SOCIAL ===== -->
-  <section id="network-section" class="section">
+  <section id="network-section" class="section section-network">
     <div class="section-content">
-      <h2 class="section-title">Choisissez un réseau social</h2>
-      <div class="social-icons">
+      <h2 class="section-title fade-in">Choisissez un réseau social</h2>
+      <div class="social-icons fade-in">
         <!-- Boutons d’icônes (SVG inline) -->
         <button class="social-icon" data-network="youtube" title="YouTube">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -63,7 +63,7 @@
   </section>
 
   <!-- ===== SECTION FORMULAIRE (CACHÉE) ===== -->
-  <section id="downloader-section" class="section hidden">
+  <section id="downloader-section" class="section section-downloader hidden">
     <div class="section-content">
       <h2 class="section-title fade-in">Collez l’URL de votre vidéo</h2>
       <form id="download-form" class="fade-in">
@@ -88,6 +88,41 @@
     </div>
   </section>
 
+  <!-- ===== PIED DE PAGE ===== -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <p>© 2025 ViralixSBH. Tous droits réservés.</p>
+      </div>
+      <div class="footer-section">
+        <a href="#" class="footer-link">À propos</a>
+        <a href="#" class="footer-link">Politique de confidentialité</a>
+        <a href="#" class="footer-link">Contact</a>
+      </div>
+      <div class="footer-section footer-socials">
+        <a href="https://facebook.com/ViralixSBH" target="_blank" class="social-footer-icon" title="Facebook">
+          <!-- Icône Facebook simplifiée -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99h-2.54v-2.89h2.54V9.41c0-2.51 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.89h-2.34V21.9C18.34 21.12 22 16.99 22 12z"/>
+          </svg>
+        </a>
+        <a href="https://instagram.com/ViralixSBH" target="_blank" class="social-footer-icon" title="Instagram">
+          <!-- Icône Instagram simplifiée -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm8 2c.69 0 1.25.56 1.25 1.25S15.69 6.5 15 6.5s-1.25-.56-1.25-1.25S14.31 4 15 4zm-3 3.75a4.25 4.25 0 1 1 0 8.5 4.25 4.25 0 0 1 0-8.5zm0 2a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5z"/>
+          </svg>
+        </a>
+        <a href="https://twitter.com/ViralixSBH" target="_blank" class="social-footer-icon" title="Twitter">
+          <!-- Icône Twitter simplifiée -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22.23 5.924c-.793.352-1.644.59-2.537.697a4.43 4.43 0 0 0 1.944-2.449 8.77 8.77 0 0 1-2.806 1.073 4.384 4.384 0 0 0-7.47 3.994 12.44 12.44 0 0 1-9.034-4.58 4.34 4.34 0 0 0 1.357 5.839 4.373 4.373 0 0 1-1.985-.548v.055a4.387 4.387 0 0 0 3.516 4.297 4.466 4.466 0 0 1-1.98.075 4.391 4.391 0 0 0 4.096 3.045A8.8 8.8 0 0 1 2 19.54a12.416 12.416 0 0 0 6.72 1.968c8.072 0 12.49-6.688 12.49-12.49 0-.19-.005-.379-.014-.568a8.943 8.943 0 0 0 2.197-2.278l.001-.002z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPT PRINCIPAL ===== -->
   <script src="download.js"></script>
 </body>
 </html>
