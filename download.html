@@ -23,7 +23,6 @@
         viewBox="0 0 24 24"
         fill="currentColor"
       >
-        <!-- Même path que dans index.html pour cohérence -->
         <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
       </svg>
       <h1 class="logo-text">
@@ -37,25 +36,45 @@
     <div class="section-content">
       <h2 class="section-title fade-in">Choisissez un réseau social</h2>
       <div class="social-icons fade-in">
-        <!-- Boutons d’icônes (SVG inline) -->
+        <!-- YouTube (rouge) -->
         <button class="social-icon" data-network="youtube" title="YouTube">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M10 15l5.19-3L10 9v6zm12-3c0-1.34-.11-2.61-.31-3.78-.19-1.03-1.01-1.85-2.04-2.04C18.61 6.11 17.34 6 16 6H8c-1.34 0-2.61.11-3.78.31-1.03.19-1.85 1.01-2.04 2.04C2.11 9.39 2 10.66 2 12s.11 2.61.31 3.78c.19 1.03 1.01 1.85 2.04 2.04C5.39 18.89 6.66 19 8 19h8c1.34 0 2.61-.11 3.78-.31 1.03-.19 1.85-1.01 2.04-2.04C21.89 14.61 22 13.34 22 12z"/>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36">
+            <rect width="24" height="24" rx="4" fill="#FF0000"/>
+            <polygon points="10,8 16,12 10,16" fill="#FFFFFF"/>
           </svg>
         </button>
+        <!-- Facebook (bleu) -->
         <button class="social-icon" data-network="facebook" title="Facebook">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99h-2.54v-2.89h2.54V9.41c0-2.51 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.89h-2.34V21.9C18.34 21.12 22 16.99 22 12z"/>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36">
+            <path fill="#1877F2" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99H8.44v-2.89h2.                                                 44V9.41c0-2.51 1.49-3.89 3.77-3.89 1.09 0 2.23.20 2.23.20v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.89h-2.34V21.9C18.34 21.12 22 16.99 22 12z"/>
+            <path fill="#FFFFFF" d="M15 11.5h-2V9.41c0-.47.38-.85.85-.85h1.15V6h-1.92c-2.12 0-3.84 1.72-3.84 3.84v1.66H8v2.09h1.24v6h2.                                                 09v-6H14l.85-2.09z"/>
           </svg>
         </button>
+        <!-- Instagram (dégradé) -->
         <button class="social-icon" data-network="instagram" title="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm8 2c.69 0 1.25.56 1.25 1.25S15.69 6.5 15 6.5s-1.25-.56-1.25-1.25S14.31 4 15 4zm-3 3.75a4.25 4.25 0 1 1 0 8.5 4.25 4.25 0 0 1 0-8.5zm0 2a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5z"/>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36">
+            <defs>
+              <linearGradient id="insta-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#F58529"/>
+                <stop offset="30%" stop-color="#DD2A7B"/>
+                <stop offset="60%" stop-color="#8134AF"/>
+                <stop offset="100%" stop-color="#515BD4"/>
+              </linearGradient>
+            </defs>
+            <rect width="24" height="24" rx="5" fill="url(#insta-gradient)"/>
+            <path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z" fill="#FFFFFF"/>
+            <circle cx="17.5" cy="6.5" r="1.5" fill="#FFFFFF"/>
           </svg>
         </button>
+        <!-- TikTok (noir + cyan + rouge) -->
         <button class="social-icon" data-network="tiktok" title="TikTok">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12.015 2v10.694a2.93 2.93 0 1 1-2.93-2.93v-3.944a6.874 6.874 0 0 0 2.93.797V2h2.93z"/>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="36" height="36">
+            <!-- Corps principal en noir -->
+            <path fill="#010101" d="M144 32h48v48a80 80 0 1 1-80-80v48z"/>
+            <!-- Accent cyan -->
+            <path fill="#69C9D0" d="M144 32h16a48 48 0 0 0 48 48v16a64 64 0 0 1-64-64z"/>
+            <!-- Accent rouge -->
+            <path fill="#EE1D52" d="M144 32v16a64 64 0 1 1-64 64v-16a48 48 0 0 0 48-48z"/>
           </svg>
         </button>
       </div>
@@ -88,7 +107,7 @@
     </div>
   </section>
 
-  <!-- ===== PIED DE PAGE ===== -->
+  <!-- ===== PIED DE PAGE (FOOTER) ===== -->
   <footer class="site-footer">
     <div class="footer-content">
       <div class="footer-section">
@@ -101,21 +120,29 @@
       </div>
       <div class="footer-section footer-socials">
         <a href="https://facebook.com/ViralixSBH" target="_blank" class="social-footer-icon" title="Facebook">
-          <!-- Icône Facebook simplifiée -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99h-2.54v-2.89h2.54V9.41c0-2.51 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.89h-2.34V21.9C18.34 21.12 22 16.99 22 12z"/>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28">
+            <path fill="#1877F2" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99H8.44v-2.89h2.44V9.41c0-2.51 1.49-3.89 3.77-3.89 1.09 0 2.23.20 2.23.20v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.89h-2.34V21.9C18.34 21.12 22 16.99 22 12z"/>
+            <path fill="#FFFFFF" d="M15 11.5h-2V9.41c0-.47.38-.85.85-.85h1.15V6h-1.92c-2.12 0-3.84 1.72-3.84 3.84v1.66H8v2.09h1.24v6h2.09v-6H14l.85-2.09z"/>
           </svg>
         </a>
         <a href="https://instagram.com/ViralixSBH" target="_blank" class="social-footer-icon" title="Instagram">
-          <!-- Icône Instagram simplifiée -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm8 2c.69 0 1.25.56 1.25 1.25S15.69 6.5 15 6.5s-1.25-.56-1.25-1.25S14.31 4 15 4zm-3 3.75a4.25 4.25 0 1 1 0 8.5 4.25 4.25 0 0 1 0-8.5zm0 2a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5z"/>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28">
+            <defs>
+              <linearGradient id="insta-footer-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#F58529"/>
+                <stop offset="30%" stop-color="#DD2A7B"/>
+                <stop offset="60%" stop-color="#8134AF"/>
+                <stop offset="100%" stop-color="#515BD4"/>
+              </linearGradient>
+            </defs>
+            <rect width="24" height="24" rx="5" fill="url(#insta-footer-grad)"/>
+            <path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z" fill="#FFFFFF"/>
+            <circle cx="17.5" cy="6.5" r="1.5" fill="#FFFFFF"/>
           </svg>
         </a>
         <a href="https://twitter.com/ViralixSBH" target="_blank" class="social-footer-icon" title="Twitter">
-          <!-- Icône Twitter simplifiée -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M22.23 5.924c-.793.352-1.644.59-2.537.697a4.43 4.43 0 0 0 1.944-2.449 8.77 8.77 0 0 1-2.806 1.073 4.384 4.384 0 0 0-7.47 3.994 12.44 12.44 0 0 1-9.034-4.58 4.34 4.34 0 0 0 1.357 5.839 4.373 4.373 0 0 1-1.985-.548v.055a4.387 4.387 0 0 0 3.516 4.297 4.466 4.466 0 0 1-1.98.075 4.391 4.391 0 0 0 4.096 3.045A8.8 8.8 0 0 1 2 19.54a12.416 12.416 0 0 0 6.72 1.968c8.072 0 12.49-6.688 12.49-12.49 0-.19-.005-.379-.014-.568a8.943 8.943 0 0 0 2.197-2.278l.001-.002z"/>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28">
+            <path fill="#1DA1F2" d="M22.23 5.924c-.793.352-1.644.59-2.537.697a4.43 4.43 0 0 0 1.944-2.449 8.77 8.77 0 0 1-2.806 1.073 4.384 4.384 0 0 0-7.47 3.994 12.44 12.44 0 0 1-9.034-4.58 4.34 4.34 0 0 0 1.357 5.839 4.373 4.373 0 0 1-1.985-.548v.055a4.387 4.387 0 0 0 3.516 4.297 4.466 4.466 0 0 1-1.98.075 4.391 4.391 0 0 0 4.096 3.045A8.8 8.8 0 0 1 2 19.54a12.416 12.416 0 0 0 6.72 1.968c8.072 0 12.49-6.688 12.49-12.49 0-.19-.005-.379-.014-.568a8.943 8.943 0 0 0 2.197-2.278l.001-.002z"/>
           </svg>
         </a>
       </div>
