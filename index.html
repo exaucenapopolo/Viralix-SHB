@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Downloader Gratuit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Téléchargeur de vidéos</h1>
+    <p>Entrez l'URL d'une vidéo YouTube, TikTok, Instagram ou Facebook pour obtenir un lien de téléchargement.</p>
+
+    <form id="download-form">
+      <input type="url" id="video-url" placeholder="Collez l'URL de la vidéo ici" required>
+      <button type="submit">Générer le lien</button>
+    </form>
+
+    <div id="result" class="hidden">
+      <p>Lien vidéo récupéré :</p>
+      <a id="download-link" href="#" download>Télécharger la vidéo</a>
+    </div>
+
+    <div id="error" class="hidden"></div>
+  </div>
+
+  <script src="download.js"></script>
+</body>
+</html>
