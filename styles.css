@@ -1,85 +1,251 @@
-/* ---------- Style général ---------- */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
+/* ============================= */
+/*      Variables & Reset        */
+/* ============================= */
+
+/* Couleurs principales (dark theme) */
+:root {
+  --bg-color: #121212;
+  --text-color: #ececec;
+  --accent-color: #1abc9c;      /* Accent pour SBH, boutons, titres */
+  --highlight-color: #ffffff;   /* Texte “Viralix” en blanc */
+  --error-bg: #ff2e2e;           /* Fond rouge pour les erreurs */
+  --error-text: #ffffff;        /* Texte blanc sur fond erreur */
+}
+
+/* Reset basique */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-/* ---------- Conteneur principal centré ---------- */
-.container {
-  max-width: 480px;
-  margin: 50px auto;
-  background: #fff;
-  padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
 }
 
-/* ---------- Titre ---------- */
-h1 {
-  font-size: 1.4em;
-  margin-bottom: 0.5em;
-  text-align: center;
+/* ============================= */
+/*         Header / Logo         */
+/* ============================= */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--bg-color);
+  z-index: 100;
+  padding: 12px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* ---------- Paragraphe descriptif ---------- */
-.container p {
-  font-size: 0.95em;
-  margin-bottom: 1.5em;
-  text-align: center;
-}
-
-/* ---------- Formulaire ---------- */
-form {
+.logo {
   display: flex;
-  flex-direction: column;
+  align-items: center;
 }
 
-/* Champ URL ---------- */
-input[type="url"] {
-  padding: 10px;
-  font-size: 1em;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
+.icon-download {
+  width: 28px;
+  height: 28px;
+  fill: var(--accent-color);
+  margin-right: 8px;
+}
+
+.logo-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--highlight-color);
+}
+
+.logo-sbh {
+  color: var(--accent-color);
+  margin-left: 4px;
+}
+
+/* ============================= */
+/*        Sections / Layout      */
+/* ============================= */
+
+.section {
+  /* Prendre toute la hauteur visible, avec décalage pour le header fixe */
+  min-height: calc(100vh - 60px);
+  padding-top: 60px; /* espace pour le header */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-content {
+  text-align: center;
+  max-width: 480px;
+  width: 90%;
+}
+
+/* ============================= */
+/*      Titres & Paragraphes     */
+/* ============================= */
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--accent-color);
+}
+
+.section-desc {
+  font-size: 1rem;
+  margin-bottom: 24px;
+  color: var(--text-color);
+}
+
+/* ============================= */
+/*          Formulaire           */
+/* ============================= */
+
+.input-url {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid var(--accent-color);
   border-radius: 4px;
+  background-color: #1e1e1e;
+  color: var(--text-color);
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  margin-bottom: 12px;
 }
 
-/* Bouton ---------- */
-button {
-  padding: 10px;
-  font-size: 1em;
-  background-color: #0077cc;
-  color: #fff;
+.input-url:focus {
+  border-color: var(--highlight-color);
+  background-color: #282828;
+}
+
+/* ============================= */
+/*        Boutons (Btn)          */
+/* ============================= */
+
+.btn-primary {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--highlight-color);
+  background-color: var(--accent-color);
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: transform 0.15s ease, background-color 0.2s ease;
 }
 
-button:hover {
-  background-color: #005fa3;
+.btn-primary:hover {
+  background-color: #16a085; /* accent plus foncé au hover */
 }
 
-/* ---------- Zone résultat ---------- */
-#result, #error {
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* Pour ajouter une petite animation au clic (ripple-like) */
+.btn-animate {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-animate::after {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: rgba(255, 255, 255, 0.2);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+}
+
+.btn-animate:active::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* ============================= */
+/*      Résultats & Erreurs      */
+/* ============================= */
+
+.result-box {
   margin-top: 20px;
-  padding: 10px;
+  padding: 12px;
   border-radius: 4px;
+  background-color: #2a2a2a;
+  color: var(--text-color);
+  text-align: left;
 }
 
-/* Fond vert clair pour le résultat ---------- */
-#result {
-  background-color: #e6ffe6;
+.download-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 600;
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-/* Fond rouge clair pour l’erreur ---------- */
-#error {
-  background-color: #ffe6e6;
-  color: #cc0000;
+.download-link:hover {
+  color: #16a085;
 }
 
-/* Class utilitaire pour masquer ---------- */
+.error-box {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 4px;
+  background-color: var(--error-bg);
+  color: var(--error-text);
+  font-weight: 600;
+  text-align: left;
+}
+
+/* ============================= */
+/*   Cacher / Afficher Elément   */
+/* ============================= */
+
 .hidden {
   display: none;
+}
+
+/* ============================= */
+/*     Animation au Scroll       */
+/* ============================= */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================= */
+/*        Responsive / Mobile    */
+/* ============================= */
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+  .input-url {
+    font-size: 0.95rem;
+  }
+  .btn-primary {
+    width: 100%;
+    padding: 12px 0;
+  }
 }

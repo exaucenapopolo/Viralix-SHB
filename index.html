@@ -2,28 +2,76 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Video Downloader Gratuit</title>
+  <title>Viralix SBH</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Fonts : Montserrat (titres) et Open Sans (texte) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS principal -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Téléchargeur de vidéos</h1>
-    <p>Entrez l'URL d'une vidéo YouTube, TikTok, Instagram ou Facebook pour obtenir un lien de téléchargement.</p>
-
-    <form id="download-form">
-      <input type="url" id="video-url" placeholder="Collez l'URL de la vidéo ici" required>
-      <button type="submit">Générer le lien</button>
-    </form>
-
-    <div id="result" class="hidden">
-      <p>Lien vidéo récupéré :</p>
-      <a id="download-link" href="#" download>Télécharger la vidéo</a>
+  <!-- Logo + barre fixe -->
+  <header class="site-header">
+    <div class="logo">
+      <!-- Icône Download SVG inline -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon-download"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M5 20h14v-2H5v2zm7-18L5.33 9h3.84v4h4.66v-4h3.84L12 2z"/>
+      </svg>
+      <h1 class="logo-text">
+        Viralix<span class="logo-sbh">SBH</span>
+      </h1>
     </div>
+  </header>
 
-    <div id="error" class="hidden"></div>
-  </div>
+  <!-- Section d'accueil -->
+  <section id="home-section" class="section">
+    <div class="section-content fade-in">
+      <h2 class="section-title">Bienvenue sur Viralix SBH</h2>
+      <p class="section-desc">
+        Viralix Social Boost Horizon – votre solution gratuite pour télécharger facilement
+        les vidéos YouTube, TikTok, Instagram et Facebook, sans inscription.
+      </p>
+      <button id="start-button" class="btn-primary btn-animate">Commencer</button>
+    </div>
+  </section>
 
+  <!-- Section de téléchargement (cachée au départ) -->
+  <section id="downloader-section" class="section hidden">
+    <div class="section-content fade-in">
+      <h2 class="section-title">Téléchargez votre vidéo</h2>
+      <form id="download-form">
+        <input
+          type="url"
+          id="video-url"
+          class="input-url"
+          placeholder="Collez l'URL de la vidéo ici"
+          required
+        >
+        <button type="submit" class="btn-primary btn-animate">Générer le lien</button>
+      </form>
+
+      <div id="result" class="result-box hidden">
+        <p>Lien vidéo récupéré :</p>
+        <a id="download-link" href="#" download class="download-link">
+          Télécharger la vidéo
+        </a>
+      </div>
+
+      <div id="error" class="error-box hidden"></div>
+    </div>
+  </section>
+
+  <!-- Script principal -->
   <script src="download.js"></script>
 </body>
 </html>
