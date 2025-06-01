@@ -324,20 +324,39 @@ body {
 
 .social-icon {
   background: none;
-  border: none; /* Plus besoin de bordure colorée si le logo est coloré */
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+  padding: 12px;
   cursor: pointer;
-  transition: transform 0.15s ease;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  color: var(--text-color);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.social-icon:hover {
-  transform: scale(1.1);
+.social-icon svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--text-color);
 }
 
+.social-icon:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-icon:active {
+  transform: scale(0.95);
+}
+
+/* Quand l’icône est sélectionnée */
 .social-icon.selected {
-  transform: scale(1.2);
+  background-color: var(--accent-color);
+  border-color: var(--highlight-color);
+}
+
+.social-icon.selected svg {
+  fill: var(--highlight-color);
 }
 
 /* =============================
@@ -347,17 +366,17 @@ body {
 .site-footer {
   background-color: #1e1e1e;
   color: var(--text-color);
-  padding: 16px 20px;    /* Réduit padding vertical */
+  padding: 24px 20px;
   text-align: center;
   font-size: 0.9rem;
-  margin-top: 20px;      /* Réduit marge au‑dessus */
+  margin-top: 40px;
 }
 
 .footer-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 12px;
+  gap: 16px;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -371,7 +390,7 @@ body {
   display: block;
   color: var(--text-color);
   text-decoration: none;
-  margin-bottom: 6px;   /* Réduit l’espace entre liens */
+  margin-bottom: 8px;
   transition: color 0.2s ease;
 }
 
@@ -389,10 +408,12 @@ body {
   display: inline-block;
   width: 28px;
   height: 28px;
-  transition: transform 0.15s ease;
+  fill: var(--text-color);
+  transition: fill 0.2s ease, transform 0.15s ease;
 }
 
 .social-footer-icon:hover {
+  fill: var(--accent-color);
   transform: scale(1.1);
 }
 
@@ -439,6 +460,9 @@ body {
   }
   .social-icons {
     gap: 12px;
+  }
+  .social-icon {
+    padding: 10px;
   }
   .feature-icon {
     width: 24px;
