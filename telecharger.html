@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>ViralixSBH - Accueil</title>
+  <title>Télécharger une vidéo - ViralixSBH</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -173,205 +173,77 @@
       margin-right: auto;
     }
 
-    .home-title {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 3.5rem;
-      font-weight: 800;
-      margin-bottom: 24px;
-      color: var(--highlight-color);
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .home-subtitle {
-      font-size: 1.8rem;
-      margin-bottom: 30px;
-      color: var(--accent-color);
-      font-weight: 600;
-    }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding-top: 80px;
-      position: relative;
-    }
-
-    .hero-image {
-      width: 100%;
-      max-width: 600px;
-      margin: 40px auto;
-      position: relative;
+    .download-section {
+      background: rgba(30, 30, 30, 0.8);
       border-radius: 20px;
-      overflow: hidden;
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
       box-shadow: var(--shadow);
-      transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
-      transition: transform 0.5s ease;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .hero-image:hover {
-      transform: perspective(1000px) rotateY(5deg) rotateX(5deg);
-    }
-
-    .features-container {
+    .platforms-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      margin-bottom: 30px;
     }
 
-    .feature-card {
+    .platform-item {
       background: var(--card-bg);
-      border-radius: 15px;
-      padding: 30px;
+      border-radius: 10px;
+      padding: 15px;
       text-align: center;
+      cursor: pointer;
       transition: var(--transition);
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 2px solid transparent;
     }
 
-    .feature-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    .platform-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .platform-item.selected {
       border-color: var(--accent-color);
+      background: rgba(26, 188, 156, 0.1);
     }
 
-    .feature-icon {
-      font-size: 3rem;
-      color: var(--accent-color);
-      margin-bottom: 20px;
-      transition: var(--transition);
-    }
-
-    .feature-card:hover .feature-icon {
-      transform: scale(1.2);
-      color: var(--highlight-color);
-    }
-
-    .feature-title {
-      font-size: 1.4rem;
-      margin-bottom: 15px;
-      color: var(--highlight-color);
-    }
-
-    .feature-desc {
-      font-size: 1rem;
-      color: var(--text-color);
-    }
-
-    .stats-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-top: 50px;
-    }
-
-    .stat-card {
-      background: var(--card-bg);
-      border-radius: 15px;
-      padding: 30px 20px;
-      text-align: center;
-      transition: var(--transition);
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .stat-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-      border-color: var(--accent-color);
-    }
-
-    .stat-number {
-      font-family: 'Montserrat', sans-serif;
+    .platform-icon {
       font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--accent-color);
       margin-bottom: 10px;
-      transition: var(--transition);
-    }
-
-    .stat-card:hover .stat-number {
-      transform: scale(1.1);
-    }
-
-    .stat-label {
-      font-size: 1rem;
-      color: var(--text-color);
-    }
-
-    .steps-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 50px;
-    }
-
-    .step-card {
-      background: var(--card-bg);
-      border-radius: 15px;
-      padding: 30px;
-      text-align: center;
-      max-width: 250px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .step-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-      border-color: var(--accent-color);
-    }
-
-    .step-number {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      width: 40px;
-      height: 40px;
-      background: var(--accent-color);
-      color: var(--bg-color);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      font-size: 1.2rem;
-      transition: var(--transition);
-    }
-
-    .step-card:hover .step-number {
-      transform: scale(1.2);
-    }
-
-    .step-icon {
-      font-size: 3rem;
       color: var(--accent-color);
-      margin: 20px 0;
-      transition: var(--transition);
     }
 
-    .step-card:hover .step-icon {
-      transform: scale(1.2);
-      color: var(--highlight-color);
-    }
-
-    .step-title {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-      color: var(--highlight-color);
-    }
-
-    .step-desc {
-      font-size: 0.95rem;
+    .platform-name {
+      font-size: 0.9rem;
       color: var(--text-color);
+    }
+
+    .input-container {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .input-url {
+      width: 100%;
+      padding: 15px 20px;
+      font-size: 1rem;
+      border: 2px solid var(--accent-color);
+      border-radius: 10px;
+      background-color: rgba(30, 30, 30, 0.7);
+      color: var(--text-color);
+      outline: none;
+      transition: var(--transition);
+      backdrop-filter: blur(5px);
+    }
+
+    .input-url:focus {
+      border-color: var(--highlight-color);
+      background-color: rgba(40, 40, 40, 0.8);
+      box-shadow: 0 0 15px rgba(26, 188, 156, 0.3);
     }
 
     .btn-primary {
@@ -417,6 +289,43 @@
 
     .btn-primary:hover::after {
       opacity: 1;
+    }
+
+    .result-box, .error-box {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 1rem;
+      text-align: left;
+      transition: var(--transition);
+    }
+
+    .result-box {
+      background: rgba(26, 188, 156, 0.1);
+      border: 1px solid var(--accent-color);
+    }
+
+    .error-box {
+      background: rgba(255, 46, 46, 0.1);
+      border: 1px solid var(--error-bg);
+    }
+
+    .download-link {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: var(--accent-color);
+      color: var(--bg-color);
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .download-link:hover {
+      background: #16a085;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(26, 188, 156, 0.3);
     }
 
     .site-footer {
@@ -525,45 +434,7 @@
       transform: translateY(0);
     }
 
-    .pulse {
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(26, 188, 156, 0.7);
-      }
-      70% {
-        transform: scale(1.02);
-        box-shadow: 0 0 0 10px rgba(26, 188, 156, 0);
-      }
-      100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(26, 188, 156, 0);
-      }
-    }
-
-    .float {
-      animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
-      100% {
-        transform: translateY(0px);
-      }
-    }
-
     @media (max-width: 992px) {
-      .home-title {
-        font-size: 2.8rem;
-      }
       .section-title {
         font-size: 2.2rem;
       }
@@ -573,24 +444,18 @@
     }
 
     @media (max-width: 768px) {
-      .home-title {
-        font-size: 2.4rem;
-      }
       .section-title {
         font-size: 2rem;
       }
       .section {
         padding: 80px 20px;
       }
-      .feature-card, .step-card, .stat-card {
-        padding: 20px 15px;
+      .download-section {
+        padding: 30px 20px;
       }
     }
 
     @media (max-width: 480px) {
-      .home-title {
-        font-size: 2rem;
-      }
       .section-title {
         font-size: 1.8rem;
       }
@@ -617,136 +482,61 @@
         <h1 class="logo-text">Viralix<span class="logo-sbh">SBH</span></h1>
       </div>
       <nav class="nav-links">
-        <a href="#home" class="nav-link">Accueil</a>
-        <a href="#features" class="nav-link">Fonctionnalités</a>
-        <a href="#steps" class="nav-link">Comment ça marche</a>
-        <a href="telecharger.html" class="nav-link">Télécharger</a>
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="index.html#features" class="nav-link">Fonctionnalités</a>
+        <a href="index.html#steps" class="nav-link">Comment ça marche</a>
+        <a href="#" class="nav-link">Télécharger</a>
       </nav>
     </div>
   </header>
 
-  <section id="home" class="section hero">
+  <section id="download" class="section" style="background: rgba(18, 18, 18, 0.8); min-height: 100vh;">
     <div class="section-content">
-      <h1 class="home-title fade-in">Bienvenue sur ViralixSBH</h1>
-      <p class="home-subtitle fade-in">Téléchargez vos vidéos préférées en un clic</p>
+      <h2 class="section-title fade-in">Téléchargez vos vidéos</h2>
       <p class="section-desc fade-in">
-        Viralix Social Boost Horizon – votre solution gratuite pour télécharger facilement
-        les vidéos YouTube, TikTok, Instagram et Facebook, sans inscription.
+        Sélectionnez une plateforme et collez le lien de la vidéo que vous souhaitez télécharger.
       </p>
-      <a href="telecharger.html" class="btn-primary pulse fade-in">Commencer maintenant</a>
       
-      <div class="hero-image fade-in">
-        <div style="background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1abc9c); height: 300px; border-radius: 20px; display: flex; align-items: center; justify-content: center;">
-          <div style="text-align: center; padding: 20px;">
-            <i class="fas fa-play-circle" style="font-size: 4rem; color: white; margin-bottom: 20px;"></i>
-            <h3 style="color: white; font-size: 1.5rem;">Téléchargement instantané</h3>
-            <p style="color: rgba(255, 255, 255, 0.8);">Essayez notre outil dès maintenant</p>
+      <div class="download-section fade-in">
+        <div class="platforms-grid" id="platforms-container">
+          <div class="platform-item" data-platform="youtube">
+            <i class="fab fa-youtube platform-icon"></i>
+            <div class="platform-name">YouTube</div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="features" class="section" style="background: rgba(18, 18, 18, 0.7);">
-    <div class="section-content">
-      <h2 class="section-title fade-in">Pourquoi choisir ViralixSBH ?</h2>
-      <p class="section-desc fade-in">
-        Découvrez les avantages de notre plateforme de téléchargement de vidéos. Rapide, sécurisé et gratuit.
-      </p>
-      
-      <div class="features-container">
-        <div class="feature-card fade-in">
-          <i class="fas fa-bolt feature-icon"></i>
-          <h3 class="feature-title">Téléchargement instantané</h3>
-          <p class="feature-desc">Obtenez vos vidéos en quelques secondes sans attente ni limitation.</p>
+          <div class="platform-item" data-platform="tiktok">
+            <i class="fab fa-tiktok platform-icon"></i>
+            <div class="platform-name">TikTok</div>
+          </div>
+          <div class="platform-item" data-platform="instagram">
+            <i class="fab fa-instagram platform-icon"></i>
+            <div class="platform-name">Instagram</div>
+          </div>
+          <div class="platform-item" data-platform="facebook">
+            <i class="fab fa-facebook platform-icon"></i>
+            <div class="platform-name">Facebook</div>
+          </div>
+        
+        <form id="download-form">
+          <div class="input-container">
+            <input type="text" id="video-url" class="input-url" placeholder="Collez le lien de la vidéo ici..." required>
+          </div>
+          <button type="submit" class="btn-primary">Générer le lien de téléchargement</button>
+        </form>
+        
+        <div id="result" class="result-box hidden">
+          <p>Votre vidéo est prête à être téléchargée !</p>
+          <a href="#" id="download-link" class="download-link">Télécharger la vidéo</a>
         </div>
         
-        <div class="feature-card fade-in">
-          <i class="fas fa-lock feature-icon"></i>
-          <h3 class="feature-title">100% gratuit et sécurisé</h3>
-          <p class="feature-desc">Aucun compte requis, pas de frais cachés. Vos données sont protégées.</p>
-        </div>
-        
-        <div class="feature-card fade-in">
-          <i class="fas fa-mobile-alt feature-icon"></i>
-          <h3 class="feature-title">Compatible avec tous les appareils</h3>
-          <p class="feature-desc">Utilisez notre service sur mobile, tablette ou ordinateur sans installation.</p>
-        </div>
-        
-        <div class="feature-card fade-in">
-          <i class="fas fa-shield-alt feature-icon"></i>
-          <h3 class="feature-title">Sans publicités intrusives</h3>
-          <p class="feature-desc">Profitez d'une expérience utilisateur propre et sans distractions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="background: rgba(30, 30, 30, 0.5);">
-    <div class="section-content">
-      <div class="stats-container">
-        <div class="stat-card fade-in">
-          <div class="stat-number">500K+</div>
-          <div class="stat-label">Utilisateurs satisfaits</div>
-        </div>
-        
-        <div class="stat-card fade-in">
-          <div class="stat-number">10M+</div>
-          <div class="stat-label">Vidéos téléchargées</div>
-        </div>
-        
-        <div class="stat-card fade-in">
-          <div class="stat-number">99.9%</div>
-          <div class="stat-label">Taux de réussite</div>
-        </div>
-        
-        <div class="stat-card fade-in">
-          <div class="stat-number">24/7</div>
-          <div class="stat-label">Disponibilité</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="steps" class="section">
-    <div class="section-content">
-      <h2 class="section-title fade-in">Comment ça marche ?</h2>
-      <p class="section-desc fade-in">
-        En seulement 4 étapes simples, téléchargez n'importe quelle vidéo de vos plateformes préférées.
-      </p>
-      
-      <div class="steps-container">
-        <div class="step-card fade-in">
-          <div class="step-number">1</div>
-          <i class="fas fa-mouse-pointer step-icon"></i>
-          <h3 class="step-title">Sélectionnez</h3>
-          <p class="step-desc">Choisissez la plateforme source de votre vidéo.</p>
-        </div>
-        
-        <div class="step-card fade-in">
-          <div class="step-number">2</div>
-          <i class="fas fa-link step-icon"></i>
-          <h3 class="step-title">Copiez</h3>
-          <p class="step-desc">Copiez le lien de la vidéo que vous souhaitez télécharger.</p>
-        </div>
-        
-        <div class="step-card fade-in">
-          <div class="step-number">3</div>
-          <i class="fas fa-magic step-icon"></i>
-          <h3 class="step-title">Générez</h3>
-          <p class="step-desc">Notre système génère instantanément le lien de téléchargement.</p>
-        </div>
-        
-        <div class="step-card fade-in">
-          <div class="step-number">4</div>
-          <i class="fas fa-download step-icon"></i>
-          <h3 class="step-title">Téléchargez</h3>
-          <p class="step-desc">Enregistrez la vidéo sur votre appareil en un seul clic.</p>
+        <div id="error" class="error-box hidden">
+          <p>Une erreur s'est produite. Veuillez vérifier le lien et réessayer.</p>
         </div>
       </div>
       
-      <div style="margin-top: 50px; text-align: center;">
-        <a href="telecharger.html" class="btn-primary">Commencer à télécharger</a>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="index.html" class="btn-primary" style="background: rgba(40, 40, 40, 0.8); border: 1px solid var(--accent-color);">
+          <i class="fas fa-arrow-left"></i> Retour à l'accueil
+        </a>
       </div>
     </div>
   </section>
@@ -769,10 +559,10 @@
       <div class="footer-section">
         <h3 class="footer-title">Liens rapides</h3>
         <ul class="footer-links">
-          <li><a href="#home" class="footer-link">Accueil</a></li>
-          <li><a href="#features" class="footer-link">Fonctionnalités</a></li>
-          <li><a href="#steps" class="footer-link">Comment ça marche</a></li>
-          <li><a href="telecharger.html" class="footer-link">Télécharger</a></li>
+          <li><a href="index.html" class="footer-link">Accueil</a></li>
+          <li><a href="index.html#features" class="footer-link">Fonctionnalités</a></li>
+          <li><a href="index.html#steps" class="footer-link">Comment ça marche</a></li>
+          <li><a href="#" class="footer-link">Télécharger</a></li>
         </ul>
       </div>
       
@@ -794,19 +584,6 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            window.scrollTo({
-              top: target.offsetTop - 80,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-
       const header = document.querySelector('.site-header');
       window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -835,9 +612,61 @@
         appearOnScroll.observe(fader);
       });
 
-      const heroImage = document.querySelector('.hero-image');
-      if (heroImage) {
-        heroImage.classList.add('float');
+      const platformItems = document.querySelectorAll('.platform-item');
+      platformItems.forEach(item => {
+        item.addEventListener('click', () => {
+          platformItems.forEach(i => i.classList.remove('selected'));
+          item.classList.add('selected');
+        });
+      });
+
+      const form = document.getElementById("download-form");
+      const urlInput = document.getElementById("video-url");
+      const resultDiv = document.getElementById("result");
+      const downloadLink = document.getElementById("download-link");
+      const errorDiv = document.getElementById("error");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        resultDiv.classList.add("hidden");
+        errorDiv.classList.add("hidden");
+
+        const videoUrl = urlInput.value.trim();
+        if (!videoUrl) {
+          showError("Veuillez saisir une URL valide.");
+          return;
+        }
+
+        const selectedPlatform = document.querySelector(".platform-item.selected");
+        if (!selectedPlatform) {
+          showError("Veuillez sélectionner une plateforme.");
+          return;
+        }
+
+        const submitBtn = form.querySelector('button');
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Traitement...';
+        submitBtn.disabled = true;
+
+        try {
+          await new Promise(resolve => setTimeout(resolve, 1500));
+          
+          const downloadUrl = `https://viralixsbh.com/download?url=${encodeURIComponent(videoUrl)}`;
+          
+          downloadLink.href = downloadUrl;
+          downloadLink.textContent = "Télécharger la vidéo";
+          resultDiv.classList.remove("hidden");
+        } catch (err) {
+          showError("Une erreur s'est produite. Veuillez réessayer.");
+        } finally {
+          submitBtn.innerHTML = originalBtnText;
+          submitBtn.disabled = false;
+        }
+      });
+
+      function showError(message) {
+        errorDiv.textContent = message;
+        errorDiv.classList.remove("hidden");
       }
     });
   </script>
